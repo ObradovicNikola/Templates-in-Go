@@ -1,2 +1,2 @@
 # Templates-in-Go
-Working with templates (gothml) in Golang
+Working with templates (.gohtml) in Golang
