@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+<ul>
+    <h1>{{.Track}}</h1>
+    <h2>{{.Date}}</h2>
+    {{range .Cars}}
+    <li>{{.Brand}} {{.Model}} - {{.Engine}}hp</li>
+    {{end}}
+</ul>
+</body>
+</html>
