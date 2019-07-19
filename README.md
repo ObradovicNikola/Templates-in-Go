@@ -1,2 +1,2 @@
-# Templates-in-Go
-Working with templates (.gohtml) in Golang
+# Web-with-Golang
+Build web applications in Golang with these tools.
