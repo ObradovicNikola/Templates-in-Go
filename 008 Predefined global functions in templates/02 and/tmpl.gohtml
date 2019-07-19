@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+<p>
+    {{if gt .Score1 .Score2}}
+        SCORE 1 > SCORE 2 
+    {{end}}
+
+    {{if lt .Score1 .Score2}}
+        SCORE 1 < SCORE 2 
+    {{end}}
+
+    {{if eq .Score1 .Score2}}
+        SCORE 1 = SCORE 2 
+    {{end}}
+
+    {{if lt .Score1 10}}
+        SCORE 1 < 10 
+    {{end}}
+</p>
+
+<!--
+
+eq
+	Returns the boolean truth of arg1 == arg2
+ne
+	Returns the boolean truth of arg1 != arg2
+lt
+	Returns the boolean truth of arg1 < arg2
+le
+	Returns the boolean truth of arg1 <= arg2
+gt
+	Returns the boolean truth of arg1 > arg2
+ge
+	Returns the boolean truth of arg1 >= arg2
+
+    All functions in documentation:
+    https://golang.org/pkg/text/template/#hdr-Functions
+-->
+
+</body>
+</html>
