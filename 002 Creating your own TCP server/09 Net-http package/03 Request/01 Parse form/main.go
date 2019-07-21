@@ -8,6 +8,7 @@ import (
 
 type hotdog int
 
+// ataching method to type hotdog
 func (m hotdog) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	err := req.ParseForm()
 	if err != nil {
