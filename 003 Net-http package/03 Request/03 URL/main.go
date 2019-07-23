@@ -4,18 +4,28 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"net/url"
 )
 
 type hotdog int
 
-// ataching method to type hotdog
 func (m hotdog) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	err := req.ParseForm()
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	tmpl.ExecuteTemplate(w, "index.gohtml", req.Form)
+	data := struct {
+		Method      string
+		URL         *url.URL
+		Submissions url.Values
+	}{
+		req.Method,
+		req.URL,
+		req.Form,
+	}
+
+	tmpl.ExecuteTemplate(w, "index.gohtml", data)
 }
 
 var tmpl *template.Template

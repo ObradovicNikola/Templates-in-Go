@@ -3,29 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Input Type Submit</title>
 </head>
 
 <body>
 
-
-    {{if .}}
-    <main>
+    <header>
+        {{if .Method}}
+        <p>The request method: {{.Method}}</p>{{end}} {{if .Submissions}}
         <p><strong>variable names</strong> (identifiers) and <em>values</em>:</p>
-        {{range $key, $value := .}}
+        {{range $key, $value := .Submissions}}
         <p><strong>{{$key}}</strong></p>
         <ul>{{range $value}}
             <li><em>{{.}}</em></li>{{end}}</ul>
-        {{end}}
-    </main>
-    {{end}}
+        {{end}} {{end}}
+    </header>
 
-
-    <form action="/?fname=James" method="POST">
+    <form action="/" method="POST">
         <input type="text" name="fname" placeholder="first name" autofocus autocomplete="off">
-        <input type="submit" name="submit-btn" value="click here">
+        <input type="submit" name="submit-btn" value="Submit button">
     </form>
 
 </body>
